@@ -14,7 +14,7 @@ export default function Navbar() {
     { name: 'SPORTS', path: '/sports' },
     { name: 'GALLERY', path: '/gallery' },
     { name: 'SPONSORS', path: '/sponsors' },
-    { name: 'OUR TEAM', path: '/team' }
+    { name: 'OUR TEAM', path: '#' }
   ]
 
   // Prevent scrolling when mobile menu is open
