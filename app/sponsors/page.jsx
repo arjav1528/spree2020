@@ -173,7 +173,7 @@ export default function SponsorsPage () {
         >
           <div className='flex-1 max-w-xs h-[1px] bg-gradient-to-r from-transparent via-[#FF6B00]/50 to-[#FF6B00]/50' />
           <div className='text-xs md:text-sm tracking-[5px] font-mono font-bold text-[#FFD700] uppercase text-center drop-shadow-[0_0_10px_rgba(255,215,0,0.3)]'>
-            PAST PARTNERS & SPONSORS
+            Our Sponsors & Media Partners
           </div>
           <div className='flex-1 max-w-xs h-[1px] bg-gradient-to-l from-transparent via-[#FF6B00]/50 to-[#FF6B00]/50' />
         </div>
