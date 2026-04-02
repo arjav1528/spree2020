@@ -3,33 +3,42 @@ import { useEffect, useState } from 'react'
 import Navbar from '@/components/Navbar'
 
 const STATS = [
-  { value: '20+', label: 'Total Partners' },
+  { value: '29', label: 'Total Partners' },
   { value: '1', label: 'Shared Vision' },
   { value: '100%', label: 'Commitment' },
   { value: '2026', label: 'Edition Soon' }
 ]
 
-// Mapped from your provided imports directly to the /public/sponsors folder
 const SPONSORS = [
-  { name: 'Adda52', src: '/sponsors/Adda52.png' },
-  { name: 'Anaconda', src: '/sponsors/Anaconda.png' },
-  { name: 'AU Bank', src: '/sponsors/AuLogo.png' },
-  { name: 'Sponsor 4', src: '/sponsors/b8hxDcPQWP4Gh1u0XvvW.png' },
-  { name: 'BSL', src: '/sponsors/BSL.png' },
-  { name: 'DLL', src: '/sponsors/DLL.png' },
-  { name: 'FBL', src: '/sponsors/FBL.png' },
-  { name: 'GOA', src: '/sponsors/GOA.png' },
-  { name: 'KA Vithub', src: '/sponsors/KA_Vithub_logo.png' },
-  { name: 'PBL', src: '/sponsors/PBL.png' },
-  { name: 'PP', src: '/sponsors/pp.jpg' },
-  { name: 'Techno', src: '/sponsors/Techno.png' },
-  { name: 'Sponsor A', src: '/sponsors/a.jpeg' },
-  { name: 'Sponsor B', src: '/sponsors/b.jpeg' },
-  { name: 'Sponsor C', src: '/sponsors/c.jpeg' },
-  { name: 'Sponsor D', src: '/sponsors/d.jpeg' },
-  { name: 'Sponsor E', src: '/sponsors/e.jpeg' },
-  { name: 'Sponsor F', src: '/sponsors/f.jpeg' },
-  { name: 'Sponsor G', src: '/sponsors/g.jpeg' }
+  { name: 'Lakme Sunexpert', src: '/Spree Website Logo/1.png', link: 'https://www.lakmeindia.com/collections/sun-protection-catalog' },
+  { name: 'Surya Roshni', src: '/Spree Website Logo/2.png', link: 'https://www.surya.co.in/' },
+  { name: 'Gatsby', src: '/Spree Website Logo/3.png', link: 'https://gatsbyindia.com/' },
+  { name: 'FanUp', src: '/Spree Website Logo/4.png', link: 'https://playfanup.in/' },
+  { name: 'Nutrivate', src: '/Spree Website Logo/5.png', link: 'https://nutrivate.in/' },
+  { name: 'ICICI Bank', src: '/Spree Website Logo/6.png', link: 'https://www.icici.bank.in/' },
+  { name: 'Swiggy', src: '/Spree Website Logo/7.png', link: 'https://www.swiggy.com/' },
+  { name: 'Avvatar', src: '/Spree Website Logo/8.png', link: 'https://www.avvatarindia.com/' },
+  { name: 'Ignite', src: '/Spree Website Logo/9.png', link: 'https://in.ignite.co/' },
+  { name: 'Storia', src: '/Spree Website Logo/10.png', link: 'https://shop.storiafoods.com/' },
+  { name: 'EaseMyTrip', src: '/Spree Website Logo/11.png', link: 'https://www.easemytrip.com/' },
+  { name: 'The Hosteller', src: '/Spree Website Logo/12.png', link: 'https://www.thehosteller.com/' },
+  { name: 'EazyDiner', src: '/Spree Website Logo/13.png', link: 'https://www.eazydiner.com/' },
+  { name: 'GoDesi', src: '/Spree Website Logo/14.png', link: 'https://godesi.in/' },
+  { name: 'Maviox', src: '/Spree Website Logo/15.png', link: 'https://maviox.com/' },
+  { name: 'Aviva Beauty', src: '/Spree Website Logo/16.png', link: 'https://avivabeauty.in/' },
+  { name: 'MYOP', src: '/Spree Website Logo/17.png', link: 'https://myop.in/' },
+  { name: 'Ritebite Max Protein', src: '/Spree Website Logo/18.png', link: 'https://maxprotein.in/' },
+  { name: 'Hell Energy Drink', src: '/Spree Website Logo/19.png', link: 'https://www.hellenergy.com/in/' },
+  { name: 'Nuke', src: '/Spree Website Logo/20.png', link: 'https://www.nukefit.in/' },
+  { name: 'Nature Day', src: '/Spree Website Logo/21.png', link: 'https://team24.in/' },
+  { name: 'Piknik', src: '/Spree Website Logo/22.png', link: 'https://www.pikniksnacks.com/index.htm' },
+  { name: 'FitKhana', src: '/Spree Website Logo/23.png', link: '' },
+  { name: 'Pulse Band', src: '/Spree Website Logo/24.png', link: 'https://pulseband.in/' },
+  { name: 'Indigo 91.9', src: '/Spree Website Logo/25.png', link: 'https://indigomusic.com/' },
+  { name: 'OnTV', src: '/Spree Website Logo/26.png', link: 'https://ontv.co.in/' },
+  { name: 'startupnews.fyi', src: '/Spree Website Logo/27.png', link: 'https://startupnews.fyi/' },
+  { name: 'DU Beat', src: '/Spree Website Logo/28.png', link: 'https://dubeat.com/' },
+  { name: 'Sanctify', src: '/Spree Website Logo/29.png', link: 'https://www.sanctify.in/' }
 ]
 
 export default function SponsorsPage () {
@@ -176,8 +185,11 @@ export default function SponsorsPage () {
         {/* The Grid Container */}
         <div className='sponsor-grid grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-6'>
           {SPONSORS.map((s, i) => (
-            <div
+            <a
               key={i}
+              href={s.link || undefined}
+              target={s.link ? '_blank' : undefined}
+              rel={s.link ? 'noopener noreferrer' : undefined}
               className='sponsor-card group relative bg-white/5 backdrop-blur-md rounded-2xl p-4 md:p-6 flex flex-col items-center justify-center aspect-square cursor-pointer overflow-hidden border border-white/10 hover:border-[#FF6B00] hover:bg-white/10 hover:shadow-[0_0_40px_rgba(255,107,0,0.2)] hover:z-10'
               style={{
                 animation: isMounted
@@ -185,6 +197,7 @@ export default function SponsorsPage () {
                   : 'none',
                 opacity: isMounted ? 0 : 1
               }}
+              aria-label={s.link ? `Visit ${s.name}` : `${s.name} website unavailable`}
             >
               {/* Inner White Plate for Logos (ensures black/colored logos are visible against dark theme) */}
               <div className='relative w-full h-full bg-white/95 rounded-xl flex items-center justify-center p-3 md:p-4 shadow-inner transition-transform duration-500 group-hover:scale-[1.05]'>
@@ -200,7 +213,7 @@ export default function SponsorsPage () {
               <div className='absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-black/80 to-transparent backdrop-blur-sm text-[#FFD700] text-[10px] md:text-xs tracking-[3px] font-mono font-bold uppercase pt-6 pb-3 text-center translate-y-full group-hover:translate-y-0 transition-transform duration-300'>
                 {s.name}
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </section>
