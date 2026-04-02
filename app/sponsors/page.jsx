@@ -1,5 +1,5 @@
 'use client'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import Navbar from '@/components/Navbar'
 
 const STATS = [
@@ -10,43 +10,39 @@ const STATS = [
 ]
 
 const SPONSORS = [
-  { name: 'Lakme Sunexpert', src: '/Spree Website Logo/1.png', link: 'https://www.lakmeindia.com/collections/sun-protection-catalog' },
-  { name: 'Surya Roshni', src: '/Spree Website Logo/2.png', link: 'https://www.surya.co.in/' },
-  { name: 'Gatsby', src: '/Spree Website Logo/3.png', link: 'https://gatsbyindia.com/' },
-  { name: 'FanUp', src: '/Spree Website Logo/4.png', link: 'https://playfanup.in/' },
-  { name: 'Nutrivate', src: '/Spree Website Logo/5.png', link: 'https://nutrivate.in/' },
-  { name: 'ICICI Bank', src: '/Spree Website Logo/6.png', link: 'https://www.icici.bank.in/' },
-  { name: 'Swiggy', src: '/Spree Website Logo/7.png', link: 'https://www.swiggy.com/' },
-  { name: 'Avvatar', src: '/Spree Website Logo/8.png', link: 'https://www.avvatarindia.com/' },
-  { name: 'Ignite', src: '/Spree Website Logo/9.png', link: 'https://in.ignite.co/' },
-  { name: 'Storia', src: '/Spree Website Logo/10.png', link: 'https://shop.storiafoods.com/' },
-  { name: 'EaseMyTrip', src: '/Spree Website Logo/11.png', link: 'https://www.easemytrip.com/' },
-  { name: 'The Hosteller', src: '/Spree Website Logo/12.png', link: 'https://www.thehosteller.com/' },
-  { name: 'EazyDiner', src: '/Spree Website Logo/13.png', link: 'https://www.eazydiner.com/' },
-  { name: 'GoDesi', src: '/Spree Website Logo/14.png', link: 'https://godesi.in/' },
-  { name: 'Maviox', src: '/Spree Website Logo/15.png', link: 'https://maviox.com/' },
-  { name: 'Aviva Beauty', src: '/Spree Website Logo/16.png', link: 'https://avivabeauty.in/' },
-  { name: 'MYOP', src: '/Spree Website Logo/17.png', link: 'https://myop.in/' },
-  { name: 'Ritebite Max Protein', src: '/Spree Website Logo/18.png', link: 'https://maxprotein.in/' },
-  { name: 'Hell Energy Drink', src: '/Spree Website Logo/19.png', link: 'https://www.hellenergy.com/in/' },
-  { name: 'Nuke', src: '/Spree Website Logo/20.png', link: 'https://www.nukefit.in/' },
-  { name: 'Nature Day', src: '/Spree Website Logo/21.png', link: 'https://team24.in/' },
-  { name: 'Piknik', src: '/Spree Website Logo/22.png', link: 'https://www.pikniksnacks.com/index.htm' },
-  { name: 'FitKhana', src: '/Spree Website Logo/23.png', link: '' },
-  { name: 'Pulse Band', src: '/Spree Website Logo/24.png', link: 'https://pulseband.in/' },
-  { name: 'Indigo 91.9', src: '/Spree Website Logo/25.png', link: 'https://indigomusic.com/' },
-  { name: 'OnTV', src: '/Spree Website Logo/26.png', link: 'https://ontv.co.in/' },
-  { name: 'startupnews.fyi', src: '/Spree Website Logo/27.png', link: 'https://startupnews.fyi/' },
-  { name: 'DU Beat', src: '/Spree Website Logo/28.png', link: 'https://dubeat.com/' },
-  { name: 'Sanctify', src: '/Spree Website Logo/29.png', link: 'https://www.sanctify.in/' }
+  { name: 'Lakme Sunexpert', slab: 'Co-Title Sponsor', src: '/Spree Website Logo/1.png', link: 'https://www.lakmeindia.com/collections/sun-protection-catalog' },
+  { name: 'Surya Roshni', slab: 'Associate Partner', src: '/Spree Website Logo/2.png', link: 'https://www.surya.co.in/' },
+  { name: 'Gatsby', slab: 'Official Hair Styling Partner', src: '/Spree Website Logo/3.png', link: 'https://gatsbyindia.com/' },
+  { name: 'FanUp', slab: 'Scoring Partner', src: '/Spree Website Logo/4.png', link: 'https://playfanup.in/' },
+  { name: 'Nutrivate', slab: 'Healthy Munching Partner', src: '/Spree Website Logo/5.png', link: 'https://nutrivate.in/' },
+  { name: 'ICICI Bank', slab: 'Festival Banking Partner', src: '/Spree Website Logo/6.png', link: 'https://www.icici.bank.in/' },
+  { name: 'Swiggy', slab: 'Festival Partner', src: '/Spree Website Logo/7.png', link: 'https://www.swiggy.com/' },
+  { name: 'Avvatar', slab: "Official Protein Partner of Spree '26 Marathon", src: '/Spree Website Logo/8.png', link: 'https://www.avvatarindia.com/' },
+  { name: 'Ignite', slab: "Official Hydration Partner of Spree '26 Marathon", src: '/Spree Website Logo/9.png', link: 'https://in.ignite.co/' },
+  { name: 'Storia', slab: "Beverage Partner of Spree '26 Marathon", src: '/Spree Website Logo/10.png', link: 'https://shop.storiafoods.com/' },
+  { name: 'EaseMyTrip', slab: 'Official Travel Partner', src: '/Spree Website Logo/11.png', link: 'https://www.easemytrip.com/' },
+  { name: 'The Hosteller', slab: 'Stay Partner', src: '/Spree Website Logo/12.png', link: 'https://www.thehosteller.com/' },
+  { name: 'EazyDiner', slab: 'Dining Partner', src: '/Spree Website Logo/13.png', link: 'https://www.eazydiner.com/' },
+  { name: 'GoDesi', slab: 'Chatpata Candy Partner', src: '/Spree Website Logo/14.png', link: 'https://godesi.in/' },
+  { name: 'Maviox', slab: 'Sports Skincare Partner', src: '/Spree Website Logo/15.png', link: 'https://maviox.com/' },
+  { name: 'Aviva Beauty', slab: "Gifting Partner of Spree '26", src: '/Spree Website Logo/16.png', link: 'https://avivabeauty.in/' },
+  { name: 'MYOP', slab: 'Festival Partner', src: '/Spree Website Logo/17.png', link: 'https://myop.in/' },
+  { name: 'Ritebite Max Protein', slab: 'Protein Partner', src: '/Spree Website Logo/18.png', link: 'https://maxprotein.in/' },
+  { name: 'Hell Energy Drink', slab: 'Festival Partner', src: '/Spree Website Logo/19.png', link: 'https://www.hellenergy.com/in/' },
+  { name: 'Nuke', slab: 'Festival Partner', src: '/Spree Website Logo/20.png', link: 'https://www.nukefit.in/' },
+  { name: 'Nature Day', slab: 'Beverage Partner', src: '/Spree Website Logo/21.png', link: 'https://team24.in/' },
+  { name: 'Piknik', slab: 'Festival Munching Pops Partner', src: '/Spree Website Logo/22.png', link: 'https://www.pikniksnacks.com/index.htm' },
+  { name: 'FitKhana', slab: 'Official Munching Partner', src: '/Spree Website Logo/23.png', link: '' },
+  { name: 'Pulse Band', slab: "Gifting Partner of Spree '26 Marathon", src: '/Spree Website Logo/24.png', link: 'https://pulseband.in/' },
+  { name: 'Indigo 91.9', slab: 'Official Radio Partner', src: '/Spree Website Logo/25.png', link: 'https://indigomusic.com/' },
+  { name: 'OnTV', slab: 'Transit Media Partner', src: '/Spree Website Logo/26.png', link: 'https://ontv.co.in/' },
+  { name: 'startupnews.fyi', slab: 'Media Partner', src: '/Spree Website Logo/27.png', link: 'https://startupnews.fyi/' },
+  { name: 'DU Beat', slab: 'Associate Media Partner', src: '/Spree Website Logo/28.png', link: 'https://dubeat.com/' },
+  { name: 'Sanctify', slab: 'Media Partner', src: '/Spree Website Logo/29.png', link: 'https://www.sanctify.in/' }
 ]
 
 export default function SponsorsPage () {
-  const [isMounted, setIsMounted] = useState(false)
-
-  useEffect(() => {
-    setIsMounted(true)
-  }, [])
+  const [isMounted] = useState(true)
 
   return (
     <main className='relative w-full min-h-screen bg-[#050200] overflow-x-hidden selection:bg-[#FF6B00] selection:text-white'>
@@ -210,8 +206,11 @@ export default function SponsorsPage () {
               </div>
 
               {/* Secret Name Tooltip that slides up on hover */}
-              <div className='absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-black/80 to-transparent backdrop-blur-sm text-[#FFD700] text-[10px] md:text-xs tracking-[3px] font-mono font-bold uppercase pt-6 pb-3 text-center translate-y-full group-hover:translate-y-0 transition-transform duration-300'>
-                {s.name}
+              <div className='absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-black/80 to-transparent backdrop-blur-sm text-[#FFD700] text-[10px] md:text-xs tracking-[2px] font-mono font-bold uppercase pt-6 pb-3 text-center translate-y-full group-hover:translate-y-0 transition-transform duration-300'>
+                <div className='px-2'>{s.name}</div>
+                <div className='px-2 mt-1 text-[9px] md:text-[10px] tracking-[1px] text-white/80'>
+                  {s.slab}
+                </div>
               </div>
             </a>
           ))}
@@ -227,7 +226,7 @@ export default function SponsorsPage () {
             </span>
           </div>
           <span className='text-xl tracking-widest text-white mt-1 font-medium'>
-            SPREE '26
+            SPREE &apos;26
           </span>
         </div>
         <div className='font-mono text-[10px] text-white/30 tracking-[3px] uppercase'>
