@@ -3,7 +3,7 @@ import { useState } from 'react'
 import Navbar from '@/components/Navbar'
 
 const STATS = [
-  { value: '29', label: 'Total Partners' },
+  { value: '30+', label: 'Total Partners' },
   { value: '1', label: 'Shared Vision' },
   { value: '100%', label: 'Commitment' },
   { value: '2026', label: 'Edition Soon' }
