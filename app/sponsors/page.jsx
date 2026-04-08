@@ -13,6 +13,7 @@ const SPONSORS = [
   { name: 'Lakme Sunexpert', slab: 'Co-Title Sponsor', src: '/Spree Website Logo/1.png', link: 'https://www.lakmeindia.com/collections/sun-protection-catalog' },
   { name: 'Surya Roshni', slab: 'Associate Partner', src: '/Spree Website Logo/2.png', link: 'https://www.surya.co.in/' },
   { name: 'Gatsby', slab: 'Official Hair Styling Partner', src: '/Spree Website Logo/3.png', link: 'https://gatsbyindia.com/' },
+  { name: 'Coca-Cola', slab: 'Official Beverage Partner', src: '/Spree Website Logo/30.png', link: 'https://www.coca-cola.com/in/en' },
   { name: 'FanUp', slab: 'Scoring Partner', src: '/Spree Website Logo/4.png', link: 'https://playfanup.in/' },
   { name: 'Nutrivate', slab: 'Healthy Munching Partner', src: '/Spree Website Logo/5.png', link: 'https://nutrivate.in/' },
   { name: 'ICICI Bank', slab: 'Festival Banking Partner', src: '/Spree Website Logo/6.png', link: 'https://www.icici.bank.in/' },
